@@ -8,7 +8,7 @@ class TodolistsController < ApplicationController
     if @list.save
       redirect_to todolist_path(@list.id)
     else
-      rendernew
+      render:new
     end
   end
   
@@ -30,6 +30,7 @@ class TodolistsController < ApplicationController
     redirect_to todolist_path(list.id)
   end
   
+  # ストロングパラメータ
   private
   def list_params
     params.require(:list).permit(:title,:body,:image)
